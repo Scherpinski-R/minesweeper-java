@@ -31,6 +31,9 @@ public class Square {
         return true;
     }
 
+    public boolean hasBomb() {
+        return bomb;
+    }
     void setBomb() {
         bomb = true;
     }
@@ -49,7 +52,11 @@ public class Square {
         return uncovered;
     }
 
-    boolean open() {
+    void setUncovered() {
+        this.uncovered = true;
+    }
+
+    public boolean open() {
         if (!flag && !uncovered) {
             uncovered = true;
 
@@ -93,7 +100,7 @@ public class Square {
         } else if (uncovered && bombsInNeighbourhood() > 0) {
             return Long.toString(bombsInNeighbourhood());
         } else if (uncovered) {
-            return " ";
+            return "_";
         } else {
             return "?";
         }
