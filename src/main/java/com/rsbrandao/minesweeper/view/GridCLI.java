@@ -38,7 +38,7 @@ public class GridCLI {
             while (!grid.goalCompleted()) {
                 System.out.println(grid);
                 String answer = prompt("Type the coordinates (x,y): ");
-                Iterator<Integer> xy = Arrays.stream(answer.trim().split(",")).map(Integer::parseInt).iterator();
+                Iterator<Integer> xy = Arrays.stream(answer.split(",")).map(e -> Integer.parseInt(e.trim())).iterator();
 
                 answer = prompt("1 - Open | 2 - (Un)Flag: ");
 
