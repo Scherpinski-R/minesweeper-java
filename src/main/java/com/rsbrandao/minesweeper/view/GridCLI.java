@@ -67,6 +67,6 @@ public class GridCLI {
         return answer;
     }
 
-    private static Grid grid;
+    private final Grid grid;
     private Scanner in = new Scanner(System.in);
 }

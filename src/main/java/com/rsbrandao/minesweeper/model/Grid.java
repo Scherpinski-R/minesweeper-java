@@ -3,10 +3,8 @@ package com.rsbrandao.minesweeper.model;
 import com.rsbrandao.minesweeper.exception.ExplosionException;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.random.RandomGenerator;
 
 public class Grid {
 
@@ -24,7 +22,7 @@ public class Grid {
         try {
             squares.get(row * cols + col).open();
         } catch (ExplosionException e) {
-            squares.stream().forEach(Square::setUncovered);
+            squares.forEach(Square::setUncovered);
             throw e;
         }
     }
